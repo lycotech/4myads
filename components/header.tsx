@@ -1,7 +1,12 @@
-import Link from "next/link";
+'use client'
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import classNames from "classnames";
 
 export default function Header() {
+  const currentPath = usePathname();
+  
   const links = [
     { label: 'Home ', href:'/'},
     { label: 'About ', href:'/'},
@@ -28,7 +33,11 @@ export default function Header() {
       <ul className="flex space-x-6 justify-center items-center">
         {links.map(link => 
         <Link key={link.href} 
-        className="text-zinc-600 hover:text-zinc-900 transition-colors" 
+        className={classNames({
+          'text-zinc-950':link.href=== currentPath,
+          'text-zinc-500': link.href !== currentPath,
+          'hover:text-zinc-800 transition-colors': true
+        })} 
         href={link.href}>{link.label}</Link> )}
       
 
