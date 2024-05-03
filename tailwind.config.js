@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        lato:['Lato', 'sans-serif'],
+      },
       colors: {
         "accent-1": "#FAFAFA",
         "accent-2": "#EAEAEA",
@@ -22,6 +25,7 @@ module.exports = {
       lineHeight: {
         tight: 1.2,
       },
+      
       fontSize: {
         "5xl": "2.5rem",
         "6xl": "2.75rem",

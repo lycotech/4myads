@@ -5,7 +5,7 @@ import Hero from "./hero";
 
 export default function Intro() {
   return (
-    <div>
+    <div className=" min-h-screen w-full">
     
     <Header />
     <Hero />

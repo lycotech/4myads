@@ -18,21 +18,22 @@ export default function Header() {
 
 
   return (
-    <nav className="flex-1 space-x-6 justify-between mb-5 items-center py-4 px-5 h-20 navbar bg-base-100">
-     
-     {/* Logo Column */}
+    <div>
+      <aside>
+        {/* Logo Column */}
+        <div className="flex pt-4 pb-1">
+          <Link href="/">
+            <img src="logo.png" alt="4myads Concept" className="h-10 w-50 mr-2" />
+          </Link>
+        </div>
 
-     <div className="flex items-center">
-      <Link href="/">
-      <img src="logo.png" alt="4myads Concept" className="h-10 w-50 mr-2" />
-      </Link>
-      
-     </div>
+      </aside>
+    
 
-
-     {/* Menu Column */}
-     <div className="flex-grow w-7/12 px-10">
-      <ul className="flex space-x-20 justify-center items-center menu menu-horizontal ">
+    <nav className="flex-1 space-x-4 justify-between mb-4 items-center pt-2 pb-0 px-5 h-20 navbar bg-base-100">
+    {/* Menu Column */}
+     <div className="flex-grow w-7/12 px-0">
+      <ul className="flex space-x-8 justify-center items-center menu menu-horizontal  md:font-bold font-lato">
         {links.map(link => 
         <Link key={link.href} 
         className={classNames({
@@ -41,9 +42,6 @@ export default function Header() {
           'hover:text-zinc-800 transition-colors': true
         })} 
         href={link.href}>{link.label}</Link> )}
-      
-
-
       </ul>
      </div>
 
@@ -57,10 +55,10 @@ export default function Header() {
      </div>
 
      {/* Add Post*/}
-     <div className="flex-grow">
-      Add Post Button
-     </div>
+     
      
      </nav>
+     </div>
+     
   );
 }
